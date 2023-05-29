@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Dubai;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d006f;
+}
+
+#listUtilsContainer {
+    box-sizing: border-box;
+    margin-top: 25vh;
+    padding: 1vh 1vw;
+    border: 0.3vw solid black;
+    border-radius: 10px;
+    background-color: #666;
+    width: 25vw;
+    height: 25vw;
+    box-shadow: 1vw 1vh 3px rgba(4, 4, 4, 0.3);
+}
+
+#pageSelector {
+    box-sizing: border-box;
+    padding: 0 3vw;
+    margin: 1vh 1vw;
+    display: flex;
+    justify-content: space-between;
+    width: 25vw;
+    height: auto;
+}
+
+
+#rightGroup {
+    display: flex;
+}

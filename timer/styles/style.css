@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Dubai;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #3d006f;
+}
+
+#timerBody {
+    margin-top: 35vh;
+    border: 0.3vw solid black;
+    border-radius: 10px;
+    padding: 1vw;
+    background-color: #666;
+    width: 30%;
+    height: fit-content;
+    box-shadow: 1vw 1vh 3px rgba(4, 4, 4, 0.3);
+}
+
+/* This will only add some padding to the inner elements of the div */
+#timerBody h1, #timerBody p, #timerBody input {
+    margin: 1vh 0.5vw;
+    height: fit-content;
+}
+
+#timerContainer {
+    display: flex;
+    size: 100% auto;
+    justify-content: center;
+}
+
+#btnContainer {
+    font-size: 0;
+    margin-top: 10%;
+    width: 100%;
+}
+
+
+#btnContainer input.btnTimer{
+        margin:calc(10%/6);
+        font-size: 1rem;
+        color: whitesmoke;
+        width: calc(90%/3);
+        height: fit-content;
+        background-color: #592d80;
+        border: 0.3vw solid #ad50ff;
+        border-radius: 40px;
+        transition: 500ms;
+}
+
+#btnContainer input.btnTimer:hover{
+    margin:calc(10%/6);
+    font-size: 1rem;
+    color: black;
+    width: calc(90%/3);
+    height: fit-content;
+    background-color: #ac4dff;
+    border: 0.3vw solid #270049;
+    border-radius: 40px;
+    transition: 500ms;
+}
+
+#btnContainer input.btnTimer:active{
+    margin:calc(10%/6);
+    font-size: 1rem;
+    color: black;
+    width: calc(90%/3);
+    height: fit-content;
+    background-color: #ffffff;
+    border: 0.3vw solid #8800ff;
+    border-radius: 40px;
+    transition: 100ms;
+}
+
+#timerBody p{
+    font-family: monospace;
+    font-size: 3em;
+}
+
+#containerH1 {
+    display: flex;
+    justify-content: center;
+}

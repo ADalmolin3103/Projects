@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Name</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <section id="listUtilsContainer">
+        <h1>My functional to-do list:</h1>
+        <p>
+            <input type="text" class="inputNewTask">
+            <button class="taskCreatorBtn">Create task</button>
+        </p>
+        <ul class="tasks">
+            
+        </ul>
+    </section>
+    
+    <div id="pageSelector">
+        <input type="button" value="Previous">
+        <p id="currentPage"></p>
+        <div id="rightGroup">
+            <input type="button" value="Next">
+            <p><label for="rpp">Items per page</label></p>
+            <select name="rowsPerPage" id="rpp">
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+    </div>
+
+</body>
+<script src="js/main.js"></script>
+
+</html>
