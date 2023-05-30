@@ -1,0 +1,87 @@
+:root {
+    --transition_time: 300ms;
+}
+
+* {
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    font-family: IBM Plex Mono;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #a28db6;
+}
+
+.bodymask {
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculatorCont {
+    border: solid gray 0.5vh;
+    border-radius: 1vh;
+    padding: 0.2vh 0.2vw;
+    background-color: whitesmoke;
+}
+
+.calculatorCont h1 {
+    margin: 5% 0;
+}
+
+#display {
+    width:90%;
+    border: none;
+    padding: 3% 0.5%;
+    margin: 5% calc(10%/2);
+    font-weight: 900;
+    font-size: 1.2rem;
+    background-color: gray;
+    transition: var(--transition_time);
+}
+
+#display:hover {
+    background-color: lightgray;
+}
+
+/* make calculator table fit the whole space */
+.calculatorCont table {
+    width: 100%;
+}
+
+.calculatorCont tbody {
+    margin-top: 1vh;
+    align-items: center;
+}
+
+
+
+.calculatorCont input {
+    width: 80%;
+    margin: 10% 10%;
+}
+
+/* btn style */
+.btn {
+    font-size: 2rem;
+    font-weight: bolder;
+    width: fit-content;
+    margin: 0.1vh 0.2vh;
+    border: none;
+    background-color: gray;
+    border-radius: 10%;
+    padding: 0.2vh 0.2vw;
+    transition: var(--transition_time);
+}
+
+.btn:hover {
+    background-color: lightgray;
+    transition: 500ms;
+    cursor: pointer;
+}
