@@ -4,14 +4,14 @@ this.btnClear = document.querySelector('.btn.op.clear');
 this.btnEq = document.querySelector('.btn.eq');
 
 
-document.addEventListener('keyDown', e =>
+document.addEventListener('keyup', e =>
 {
     console.log(e.key);
     if (e.key == 'Enter')
     {
         display.value = calculate();
     }
-    if (e.key == 'Backspace' || e.key == 'Delete')
+    if (e.key === 'Delete')
     {
         deleteChar();
     }
