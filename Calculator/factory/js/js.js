@@ -19,26 +19,26 @@ function createCalculator()
             /* Since i am using a arrow function, the this will always be the one who created the object (in this case calculator in claculator = createCalculator(); ) */
             document.addEventListener('click', e =>
             {
-                const element = e.target;
-                if (element.classList.contains('btn'))
+                const elementClicked = e.target;
+                if (elementClicked.classList.contains('btn'))
                 {
-                    if (element.classList.contains('clear'))
+                    if (elementClicked.classList.contains('clear'))
                     {
                         this.resetDisplay();
                     }
-                    else if (element.classList.contains('del'))
+                    else if (elementClicked.classList.contains('del'))
                     {
                         //The alternative below would require a variable called displayValue, that would only be used here, trashing memory and using resources everytime any button would be pressed.
                         //this.display.value = this.display.value.slice(0, displayValue.length-1);
                         this.display.value = this.display.value.slice(0, -1);
                     }
-                    else if (element.classList.contains('eq'))
+                    else if (elementClicked.classList.contains('eq'))
                     {
                         this.display.value = this.calculate();
                     }
                     else
                     {
-                        this.display.value += element.value;
+                        this.display.value += elementClicked.value;
                     }
 
                 }
@@ -59,6 +59,7 @@ function createCalculator()
         btnToDisp(value)
         {
             this.display.value += value;
+            this.display.focus();
 
         },
 
@@ -82,5 +83,5 @@ function createCalculator()
     }
 }
 
-const calculator = createCalculator();
-calculator.start();
+const Calculator = createCalculator();
+Calculator.start();

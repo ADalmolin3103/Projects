@@ -1,86 +1,71 @@
-function createCalculator()
+function Calculator()
 {
-    return {
-        /* Attributes: */
-        display: document.querySelector('#display'),
-        btnClear: document.querySelector('.btn.op.clear'),
-        btnEq: document.querySelector('.btn.eq'),
+    this.display = document.querySelector('#display');
+    this.btnClear = document.querySelector('.btn.op.clear');
+    this.btnEq = document.querySelector('.btn.eq');
 
-        start()
+    document.addEventListener('click', e =>
+    {
+        let elementClicked = e.target;
+        
+        if (elementClicked.classList.contains('btn'))
         {
-            this.buttonClick();
-            this.enterClick();
-        },
-
-        buttonClick()
-        {
-            /* Arrow functions do not change the object invoker (THIS) */
-            //Using function(changes invoked object below to document (since document calls func, this=document))
-            /* Since i am using a arrow function, the this will always be the one who created the object (in this case calculator in claculator = createCalculator(); ) */
-            document.addEventListener('click', e =>
+            if (elementClicked.classList.contains('clear'))
             {
-                const element = e.target;
-                if (element.classList.contains('btn'))
-                {
-                    if (element.classList.contains('clear'))
-                    {
-                        this.resetDisplay();
-                    }
-                    else if (element.classList.contains('del'))
-                    {
-                        //The alternative below would require a variable called displayValue, that would only be used here, trashing memory and using resources everytime any button would be pressed.
-                        //this.display.value = this.display.value.slice(0, displayValue.length-1);
-                        this.display.value = this.display.value.slice(0, -1);
-                    }
-                    else if (element.classList.contains('eq'))
-                    {
-                        this.display.value = this.calculate();
-                    }
-                    else
-                    {
-                        this.display.value += element.value;
-                    }
-
-                }
-            });
-        },
-
-        enterClick()
-        {
-            document.addEventListener('keyup', e =>
+                resetDisplay();
+            }
+            else if (elementClicked.classList.contains('del'))
             {
-                if (e.key == 'Enter')
-                {
-                    this.display.value = this.calculate();
-                }
-            })
-        },
-
-        btnToDisp(value)
-        {
-            this.display.value += value;
-
-        },
-
-        resetDisplay()
-        {
-            this.display.value = '';
-        },
-
-        calculate()
-        {
-            try
+                deleteChar();
+            }
+            else if (elementClicked.classList.contains('eq'))
             {
-                if (eval(this.display.value) == undefined) return 'E: not a expression'
-                return eval(this.display.value);
-            } catch (error)
+                display.value = calculate();
+            }
+            else
             {
-                return 'E: not a expression'
+                btnToDisplay(elementClicked);
             }
 
         }
+    });
+
+    document.addEventListener('keyUp', e =>
+    {
+        if (e.key == 'Enter')
+        {
+            display.value = calculate();
+        }
+        if(e.key == 'Backspace' || e.key == 'Delete'){
+            deleteChar();
+        }
+    })
+
+    function calculate()
+    {
+        try
+        {
+            if (eval(this.display.value) == undefined) return 'E: not a expression'
+            return eval(this.display.value);
+        }
+        catch (error)
+        {
+            return 'E: not a expression'
+        }
+    }
+
+    let resetDisplay  = function() {
+        display.value = '';
+    }
+
+    let deleteChar = function(){
+        display.value = display.value.slice(0, -1);
+    }
+
+    let btnToDisplay = function(elementClicked) {
+        this.display.value += elementClicked.value;
+        this.display.focus()
     }
 }
 
-const calculator = createCalculator();
-calculator.start();
+const cal = new Calculator();
